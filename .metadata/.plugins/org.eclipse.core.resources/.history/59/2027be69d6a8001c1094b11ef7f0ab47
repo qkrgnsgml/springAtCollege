@@ -1,0 +1,5 @@
+package com.inhatc.hello;
+
+public class MYSQLConnectionTest {
+
+}
