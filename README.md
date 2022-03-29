@@ -11,4 +11,6 @@
 
 3주차 : 컨트롤러가 무엇인지, 그리고 파라미터와 JSON을 Model로 어떻게 넘기고 View에서 어떻게 
 
-4주차 : MySQL 설치후 연동, mybatis 설치후 테스트
+4주차 : MySQL 설치후 연동테스트, mybatis 설치후 테스트
+
+5주차 : 엔티티 개발 후 mybatis를 이용해 select와 insert
