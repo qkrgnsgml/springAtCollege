@@ -32,7 +32,7 @@ public class MemberDAOTest{
 		
 		vo.setUserid("user0");
 		vo.setUserpw("userpw0");
-		vo.setUsername("ë°•í›ˆí¬");
+		vo.setUsername("¹ÚÈÆÈñ");
 		vo.setEmail("user0@aser.com");
 		
 		dao.insertMember(vo);
