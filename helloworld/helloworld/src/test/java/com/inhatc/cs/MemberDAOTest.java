@@ -17,10 +17,12 @@ import com.inhatc.persistence.MemberDAO;
       locations =  {"file:src/main/webapp/WEB-INF/spring/**/root-context.xml"})
 
 public class MemberDAOTest{
+	
 	@Autowired
 	private MemberDAO dao;
 	
 	
+
 	@Test
 	public void testTime() throws Exception{
 		System.out.println(dao.getTime());
@@ -37,4 +39,7 @@ public class MemberDAOTest{
 		
 		dao.insertMember(vo);
 	}
+	
+	
+
 }

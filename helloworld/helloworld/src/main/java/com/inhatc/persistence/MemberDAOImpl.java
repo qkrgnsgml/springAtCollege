@@ -1,10 +1,14 @@
 package com.inhatc.persistence;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
-
+import org.springframework.stereotype.Service;
 
 import com.inhatc.domain.MemberVO;
 
@@ -26,6 +30,51 @@ public class MemberDAOImpl implements MemberDAO{
 		// TODO Auto-generated method stub
 		sqlSession.insert(namespace+".insertMember",vo);
 	}
+
+	@Override
+	public MemberVO readMember(String userid) throws Exception {
+		return (MemberVO)sqlSession.selectOne(namespace+".readMember",userid);
+	}
+
+	@Override
+	public MemberVO readMemberBypw(String userid, String userpw) throws Exception {
+		// TODO Auto-generated method stub
+		Map<String, Object> paramMap = new HashMap<String, Object>();
+		paramMap.put("userid",userid);
+		paramMap.put("userpw", userpw);
+		return (MemberVO)sqlSession.selectOne(namespace+".readMemberBypw",paramMap);
+	}
+
+	@Override
+	public void updateMember(MemberVO vo) throws Exception {
+		// TODO Auto-generated method stub
+		
+		sqlSession.update(namespace+".updateMember",vo);
+		
+	}
+
+	@Override
+	public void deleteMember(String userid) throws Exception {
+		// TODO Auto-generated method stub
+		sqlSession.delete(namespace+".deleteMember", userid);
+		
+	}
+
+	@Override
+	public int listCount() throws Exception {
+		return sqlSession.selectOne(namespace+".listCount");
+	}
+
+	@Override
+	public List<MemberVO> listAll() throws Exception {
+		
+		return sqlSession.selectList(namespace+".listAll");
+		
+	}
+	
+	
+	
+	
 	
 	
 	

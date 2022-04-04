@@ -14,4 +14,30 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		values(#{userid},#{userpw},#{username},#{email})
 	</insert>
 	
+	<select id="readMember" resultType="com.inhatc.domain.MemberVO">
+		select * from tbl_member where userid=#{userid}
+	</select>
+	
+	<select id="readMemberBypw" resultType="com.inhatc.domain.MemberVO">
+		select * from tbl_member where userid=#{userid} and userpw=#{userpw}
+	</select>
+	
+	<update id="updateMember">
+		update tbl_member set userpw = #{userpw} ,username = #{username}, email=#{email} where userid=#{userid}
+	</update>
+	
+	<delete id="deleteMember">
+		delete from tbl_member where userid=#{userid}
+	</delete>
+	
+	<select id="listCount" resultType="int">
+		select count(*) from tbl_member
+	</select>
+	
+	<select id="listAll" resultType="com.inhatc.domain.MemberVO">
+		<![CDATA[
+		select userid, userpw, username, email, regdate, updatedate from tbl_member
+		]]>
+	</select>
+	
 </mapper>
