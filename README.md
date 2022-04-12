@@ -16,3 +16,5 @@
 5주차 : 엔티티 개발 후 mybatis를 이용해 select와 insert
 
 6주차 : member 값에 대한 CRUD테스트와 select 했을때 List값을 가져와서 출력, DAO > mapper > DAOImpl 순서
+
+7주차 : CURD 시험전에 모의시험
