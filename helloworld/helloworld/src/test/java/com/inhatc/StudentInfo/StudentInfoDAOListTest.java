@@ -1,6 +1,4 @@
-package com.inhatc.cs;
-
-
+package com.inhatc.StudentInfo;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,34 +6,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.inhatc.domain.MemberVO;
-import com.inhatc.persistence.MemberDAO;
-
+import com.inhatc.domain.StudentVO;
+import com.inhatc.persistence.StudentInfoDAO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(
       locations =  {"file:src/main/webapp/WEB-INF/spring/**/root-context.xml"})
 
-public class MemberDAOUpdateTest{
+public class StudentInfoDAOListTest {
 	
 	@Autowired
-	private MemberDAO dao;
-	
+	private StudentInfoDAO dao;
 	
 	@Test
-	public void updateMember() throws Exception{
-		
-		MemberVO vo = new MemberVO();
-		
-		vo.setUserid("user0");
-		vo.setUserpw("userpw0cd");
-		vo.setUsername("박훈희cd");
-		vo.setEmail("user0@cd.com");
-		
-		dao.updateMember(vo);
-
+	public void listAll() throws Exception{
+		System.out.println(dao.listAll());
 	}
-	
-	
 
 }

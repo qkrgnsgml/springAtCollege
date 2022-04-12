@@ -1,6 +1,4 @@
-package com.inhatc.cs;
-
-
+package com.inhatc.StudentInfo;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,37 +7,21 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.inhatc.domain.MemberVO;
-import com.inhatc.persistence.MemberDAO;
-
+import com.inhatc.domain.StudentVO;
+import com.inhatc.persistence.StudentInfoDAO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(
       locations =  {"file:src/main/webapp/WEB-INF/spring/**/root-context.xml"})
 
-public class MemberDAOTest{
+public class StudentInfoDAODeleteTest {
 	
 	@Autowired
-	private MemberDAO dao;
-	
-	
-
-	@Test
-	public void testTime() throws Exception{
-		System.out.println(dao.getTime());
-	}
+	private StudentInfoDAO dao;
 	
 	@Test
-	public void testInsertMember() throws Exception{
-		MemberVO vo = new MemberVO();
-		
-		vo.setUserid("user0");
-		vo.setUserpw("userpw0");
-		vo.setUsername("박훈희");
-		vo.setEmail("user0@aser.com");
-		
-		dao.insertMember(vo);
+	public void deleteStudent() throws Exception{
+		dao.deleteStudent("user1");
 	}
-	
-	
 
 }
