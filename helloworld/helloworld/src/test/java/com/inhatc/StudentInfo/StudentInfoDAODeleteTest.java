@@ -1,5 +1,7 @@
 package com.inhatc.StudentInfo;
 
+import javax.inject.Inject;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,12 +18,12 @@ import com.inhatc.persistence.StudentInfoDAO;
 
 public class StudentInfoDAODeleteTest {
 	
-	@Autowired
+	@Inject
 	private StudentInfoDAO dao;
 	
 	@Test
 	public void deleteStudent() throws Exception{
-		dao.deleteStudent("user1");
+		dao.deleteStudent("user2");
 	}
 
 }
