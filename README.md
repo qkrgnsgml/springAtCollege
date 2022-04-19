@@ -18,3 +18,5 @@
 6주차 : member 값에 대한 CRUD테스트와 select 했을때 List값을 가져와서 출력, DAO > mapper > DAOImpl 순서
 
 7주차 : CURD 시험전에 모의시험
+
+8주차 : 중간고사
