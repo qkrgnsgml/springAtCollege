@@ -7,8 +7,8 @@ public class BoardVO {
 	private Integer bno;
 	private String title;
 	private String content;
-	private String Writer;
-	private int viewCnt;
+	private String writer;
+	private int viewcnt;
 	private Date regdate;
 	public Integer getBno() {
 		return bno;
@@ -29,16 +29,16 @@ public class BoardVO {
 		this.content = content;
 	}
 	public String getWriter() {
-		return Writer;
+		return writer;
 	}
 	public void setWriter(String writer) {
-		Writer = writer;
+		this.writer = writer;
 	}
-	public int getViewCnt() {
-		return viewCnt;
+	public int getViewcnt() {
+		return viewcnt;
 	}
-	public void setViewCnt(int viewCnt) {
-		this.viewCnt = viewCnt;
+	public void setViewcnt(int viewCnt) {
+		this.viewcnt = viewCnt;
 	}
 	public Date getRegdate() {
 		return regdate;
@@ -48,8 +48,8 @@ public class BoardVO {
 	}
 	@Override
 	public String toString() {
-		return "BoardVO [bno=" + bno + ", title=" + title + ", content=" + content + ", Writer=" + Writer + ", viewCnt="
-				+ viewCnt + ", regdate=" + regdate + "]";
+		return "BoardVO [bno=" + bno + ", title=" + title + ", content=" + content + ", writer=" + writer + ", viewCnt="
+				+ viewcnt + ", regdate=" + regdate + "]";
 	}
 	public BoardVO() {
 		super();

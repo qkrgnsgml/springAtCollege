@@ -12,7 +12,6 @@ import com.inhatc.persistence.BoardDAO;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(
       locations =  {"file:src/main/webapp/WEB-INF/spring/**/root-context.xml"})
-
 public class BoardDAOListTest {
 	
 	@Inject

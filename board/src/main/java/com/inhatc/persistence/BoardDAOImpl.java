@@ -19,19 +19,19 @@ public class BoardDAOImpl implements BoardDAO{
 	@Override
 	public void create(BoardVO vo) throws Exception {
 		// TODO Auto-generated method stub
-		sqlSession.insert(namespace+".create",vo);
+		sqlSession.insert(namespace+".create", vo);
 	}
 
 	@Override
 	public BoardVO read(Integer bno) throws Exception {
 		// TODO Auto-generated method stub
-		return (BoardVO)sqlSession.selectOne(namespace+".read",bno);
+		return (BoardVO)sqlSession.selectOne(namespace+".read", bno);
 	}
 
 	@Override
 	public void update(BoardVO vo) throws Exception {
 		// TODO Auto-generated method stub
-		sqlSession.update(namespace+".update",vo);
+		sqlSession.update(namespace+".update", vo);
 	}
 
 	@Override
