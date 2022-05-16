@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.inhatc.domain.BoardVO;
+import com.inhatc.domain.Criteria;
+import com.inhatc.domain.PageMaker;
 import com.inhatc.service.BoardService;
 
 @Controller
@@ -22,7 +24,7 @@ public class BoardController {
 	private BoardService service;
 	
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
-	public void registerGET(BoardVO board, Model model) throws Exception{
+	public void registerGET(BoardVO board) throws Exception{
 		System.out.println("Request register (GET)");
 		//return "/board/register";
 	}
@@ -51,6 +53,7 @@ public class BoardController {
 	@RequestMapping(value="/remove", method = RequestMethod.POST)
 	public String remove(@RequestParam("bno") int bno, RedirectAttributes rttr)throws Exception {
 		service.remove(bno);
+	
 		return "redirect:/board/listAll";
 	}
 	
@@ -63,6 +66,24 @@ public class BoardController {
 	public String modifyPOST(BoardVO board, RedirectAttributes rttr) throws Exception{
 		service.modify(board);
 		return "redirect:/board/listAll";
+	}
+	
+	@RequestMapping(value="/listCri", method = RequestMethod.GET)
+	public void listCri(Criteria cri, Model model) throws Exception{
+		List<BoardVO> list = service.listCriteria(cri);
+		model.addAttribute("list", list);
+		System.out.println("Request List Cri");
+	}
+	
+	@RequestMapping(value="/listPage", method = RequestMethod.GET)
+	public void listPage(Criteria cri, Model model) throws Exception{
+		List<BoardVO> list = service.listCriteria(cri);
+		model.addAttribute("list", list);
+		System.out.println("Request List Page");
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.setTotalCount(service.listCountCriteria(cri));
+		model.addAttribute("pageMaker",pageMaker);
 	}
 
 }

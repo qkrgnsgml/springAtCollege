@@ -7,11 +7,13 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.inhatc.domain.BoardVO;
+import com.inhatc.domain.Criteria;
 import com.inhatc.persistence.BoardDAO;
+import com.inhatc.persistence.BoardDAOImpl;
 
 @Service
 public class BoardServiceImpl implements BoardService {
-	
+
 	@Inject
 	private BoardDAO dao;
 
@@ -40,6 +42,24 @@ public class BoardServiceImpl implements BoardService {
 		return dao.listAll();
 	}
 
+	@Override
+	public List<BoardVO> listPage(int page) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<BoardVO> listCriteria(Criteria cri) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.listCriteria(cri);
+	}
+
+	@Override
+	public int listCountCriteria(Criteria cri) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.countPaging(cri);
+	}
+	
 	
 	
 }

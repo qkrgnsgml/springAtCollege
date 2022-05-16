@@ -20,7 +20,7 @@ public class BoardDAODeleteTest {
 	
 	@Test
 	public void deleteStudent() throws Exception{
-		dao.delete(3);
+		dao.delete(5);
 	}
 
 }

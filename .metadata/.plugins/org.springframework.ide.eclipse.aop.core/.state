@@ -2,4 +2,5 @@
 <aop-reference-model>
 <aop-project name="Hello"/>
 <aop-project name="helloworld"/>
+<aop-project name="board"/>
 </aop-reference-model>
