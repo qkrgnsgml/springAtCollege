@@ -20,6 +20,8 @@ import com.inhatc.service.BoardService;
 @RequestMapping("/board/*")
 public class BoardController {
 	
+	int a;
+	
 	@Inject
 	private BoardService service;
 	
@@ -77,11 +79,13 @@ public class BoardController {
 	
 	@RequestMapping(value="/listPage", method = RequestMethod.GET)
 	public void listPage(Criteria cri, Model model) throws Exception{
-		List<BoardVO> list = service.listCriteria(cri);
-		model.addAttribute("list", list);
+		a = cri.getPage();
+		model.addAttribute("list", service.listCriteria(cri));
 		System.out.println("Request List Page");
 		PageMaker pageMaker = new PageMaker();
+		cri.setPage(a);
 		pageMaker.setCri(cri);
+		System.out.println(cri.getPage() + " and " + cri.getPerPageNum());
 		pageMaker.setTotalCount(service.listCountCriteria(cri));
 		model.addAttribute("pageMaker",pageMaker);
 	}

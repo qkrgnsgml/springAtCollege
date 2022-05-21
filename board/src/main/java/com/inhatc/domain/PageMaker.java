@@ -8,10 +8,20 @@ public class PageMaker {
 	private boolean next;
 	private Criteria cri;
 	private int displayPageNum = 10;
+	int a;
 	
 	private void calcData() {
-		endPage = (int) Math.ceil(totalCount / (double) cri.getPerPageNum());
+		//endPage = (int) Math.ceil(totalCount / (double) cri.getPerPageNum());
+		//startPage = (endPage - displayPageNum) + 1;
+		a = cri.getPage();
+	endPage = (int) (Math.ceil(a / (double) displayPageNum) * displayPageNum);
+
 		startPage = (endPage - displayPageNum) + 1;
+
+		    int tempEndPage = (int) (Math.ceil(totalCount / (double) cri.getPerPageNum()));
+		    if (endPage > tempEndPage) {
+   endPage = tempEndPage;
+}
 		prev = startPage == 1? false : true;
 		next = endPage * cri.getPerPageNum() >= totalCount ? false:true;
 	}

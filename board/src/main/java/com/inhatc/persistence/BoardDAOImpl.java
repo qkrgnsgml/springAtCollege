@@ -63,7 +63,7 @@ public class BoardDAOImpl implements BoardDAO{
 		if(cri.getPage() <= 0) {
 			cri.setPage(1);
 		}
-		cri.setPage((cri.getPage()-1) *10);
+		cri.setPage((cri.getPage()-1)*10);
 		return sqlSession.selectList(namespace+".listCriteria", cri);
 	}
 
