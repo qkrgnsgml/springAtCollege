@@ -2,4 +2,7 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
     <fullyQualifiedTypeName name="com.inhatc.domain.PageMaker"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
+    <fullyQualifiedTypeName name="org.springframework.web.util.UriComponents"/>
+    <fullyQualifiedTypeName name="org.springframework.web.util.UriComponentsBuilder"/>
 </qualifiedTypeNameHistroy>
