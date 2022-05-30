@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.inhatc.domain.BoardVO;
 import com.inhatc.domain.Criteria;
+import com.inhatc.domain.SearchCriteria;
 
 public interface BoardService {
 	
@@ -15,4 +16,8 @@ public interface BoardService {
 	public List<BoardVO> listPage(int page) throws Exception;
 	public List<BoardVO> listCriteria(Criteria cri) throws Exception;
 	public int listCountCriteria(Criteria cri) throws Exception;
+	  public List<BoardVO> listSearchCriteria(SearchCriteria cri) 
+		      throws Exception;
+
+		  public int listSearchCount(SearchCriteria cri) throws Exception;
 }
